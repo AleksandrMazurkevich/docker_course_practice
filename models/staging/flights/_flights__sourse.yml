@@ -94,6 +94,15 @@ sources:
             description: "Фактическое время вылета"
           - name: actual_arrival
             description: "Фактическое время прилета"
+        freshness:
+          warn_after:
+            count: 2
+            period: day
+          error_after:
+            count: 4
+            period: day
+          filter: "actual_departure IS NOT NULL"
+        loaded_at_field: actual_departure
 
       - name: flights_v
         description: "Расширенные данные о рейсах"
@@ -138,6 +147,15 @@ sources:
             description: "Местное фактическое время прилета"
           - name: actual_duration
             description: "Фактическая продолжительность"
+        freshness:
+          warn_after:
+            count: 2
+            period: day
+          error_after:
+            count: 4
+            period: day
+          filter: "actual_departure IS NOT NULL"
+        loaded_at_field: actual_departure
 
       - name: routes
         description: "Маршруты рейсов"
