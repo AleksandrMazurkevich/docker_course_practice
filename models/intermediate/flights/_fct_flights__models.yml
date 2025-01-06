@@ -1,0 +1,36 @@
+version: 2
+models:
+  - name: fct_ticket_flights
+    description: "Модель для управления данными о билетах и рейсах."
+    docs:
+      show: true
+      node_color: "green"
+    access: public
+    config:
+      meta:
+        owner: "your_email@gmail.com"
+        tags:
+          - tickets
+          - flights
+        data_sensitivity: "confidential"
+        refresh_frequency: "daily"
+        purpose: "Анализ продаж билетов и управления рейсами."
+    columns:
+      - name: ticket_no
+        description: "Уникальный номер билета."
+        tests:
+          - not_null
+          - unique
+        tags: ["key", "identifier"]
+      - name: flight_id
+        description: "Идентификатор рейса."
+        tests:
+          - not_null
+        tags: ["foreign_key"]
+      - name: fare_conditions
+        description: "Условия тарифа для билета."
+        tags: ["attribute"]
+      - name: amount
+        description: "Сумма оплаты за билет."
+        tags: ["attribute", "metric"]
+
