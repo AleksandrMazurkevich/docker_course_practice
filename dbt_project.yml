@@ -23,3 +23,9 @@ models:
     staging:
       flights:
         +materialized: table  # Указываем материализацию как "таблица"
+    marts:
+      flights:
+        +materialized: table  # Указываем материализацию как "таблица"
+    marts:
+      flights:
+        +materialized: table  # Указываем материализацию как "таблица"
