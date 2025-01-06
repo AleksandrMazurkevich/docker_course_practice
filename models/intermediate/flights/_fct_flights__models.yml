@@ -18,12 +18,16 @@ models:
     columns:
       - name: ticket_no
         description: "Уникальный номер билета."
+        constraints:
+          - type: not_null
         tests:
           - not_null
           - unique
         tags: ["key", "identifier"]
       - name: flight_id
         description: "Идентификатор рейса."
+        constraints:
+          - type: not_null
         tests:
           - not_null
         tags: ["foreign_key"]
@@ -32,5 +36,9 @@ models:
         tags: ["attribute"]
       - name: amount
         description: "Сумма оплаты за билет."
+        cconstraints:
+          - type: not_null
+          - type: check
+            expression: "amount > 0"
         tags: ["attribute", "metric"]
 
