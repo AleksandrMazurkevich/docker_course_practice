@@ -4,7 +4,7 @@ models:
     description: "Модель для управления данными о билетах и рейсах."
     docs:
       show: true
-      node_color: "green"
+      node_color: green
     access: public
     config:
       meta:
