@@ -36,9 +36,8 @@ models:
         tags: ["attribute"]
       - name: amount
         description: "Сумма оплаты за билет."
-        cconstraints:
-          - type: not_null
+        constraints:
           - type: check
-            expression: "amount > 0"
+            expression: "amount > 10"
         tags: ["attribute", "metric"]
 
