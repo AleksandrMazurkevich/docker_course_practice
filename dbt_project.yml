@@ -29,3 +29,6 @@ models:
     marts:
       flights:
         +materialized: table  # Указываем материализацию как "таблица"
+seeds:
+  dbt_course_practice:
+    schema: seeds

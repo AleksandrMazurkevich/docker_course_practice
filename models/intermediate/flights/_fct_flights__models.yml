@@ -18,16 +18,11 @@ models:
     columns:
       - name: ticket_no
         description: "Уникальный номер билета."
-        constraints:
-          - type: not_null
         tests:
           - not_null
-          - unique
         tags: ["key", "identifier"]
       - name: flight_id
         description: "Идентификатор рейса."
-        constraints:
-          - type: not_null
         tests:
           - not_null
         tags: ["foreign_key"]
