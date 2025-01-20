@@ -1,9 +1,10 @@
 {{
     config (
-        materialized = 'table',
+        materialized = 'incremental',
+        incremental_strategy = 'append', 
+        tags = ['fligths']
     )
 }}
-
 
 
 select
@@ -18,5 +19,9 @@ select
         actual_departure,
         actual_arrival
 from {{ source('demo_src', 'flights') }}
+{% if is_incremental() %}
+WHERE 
+    actual_departure > (SELECT MAX(actual_departure) FROM {{ this }})
+{% endif %}
 
   

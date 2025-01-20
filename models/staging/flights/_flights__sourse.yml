@@ -61,7 +61,7 @@ sources:
           - name: seat_no
             description: "Номер места"
 
-      - name: bookings
+      - name: bookilsngs
         description: "Информация о бронированиях"
         columns:
           - name: book_ref
