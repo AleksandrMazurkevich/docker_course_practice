@@ -12,3 +12,4 @@ select
     "contact_data"
 from
   {{ ref('stg_tickets') }}
+WHERE "passenger_id" not in ({{ ref('model_name') }})

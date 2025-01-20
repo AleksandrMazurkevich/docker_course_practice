@@ -1,6 +1,6 @@
 {{
   config(
-    materialized = 'view',
+    materialized = 'table',
     )
 }}
 
@@ -16,3 +16,5 @@ select
     actual_departure,
     actual_arrival
 from {{ ref('stg_flights__flights') }}
+
+fct_fligths__tickets

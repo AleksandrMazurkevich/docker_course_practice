@@ -1,0 +1,13 @@
+seeds:
+  - name: passagers_employee
+    description: Пассажиры сотрудники компании
+    config:
+      column_types:
+        passenger_id: varchar(11)
+        passenger_name: varchar(50)
+      delimiter: ","
+    columns:
+      - name: passenger_id
+        tests:
+          - not_null
+          - unique
