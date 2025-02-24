@@ -2,10 +2,10 @@
 
 {{
    config(
-       target_schema='snapshot',
-       unique_key= 'aircraft_code',
-       strategy='check',
-       check_cols = ['model', 'range']
+       target_schema= 'snapshot',
+       unique_key= ['aircraft_code', 'model'],
+       strategy= 'check',
+       check_cols= ['model', 'range']
    )
 }}
 
