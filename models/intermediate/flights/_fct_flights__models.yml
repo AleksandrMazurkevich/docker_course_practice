@@ -35,4 +35,30 @@ models:
           - type: check
             expression: "amount > 10"
         tags: ["attribute", "metric"]
+  - name: fct_flights
+    description:
+      Фактологическая таблица, содержащая информацию о рейсах. Эта модель включает данные о рейсах, их статусах и времени отправления/прибытия. 
+      Данные охватывают планируемые и фактические времена отправления и прибытия, а также информацию о самолетах, используемых для выполнения рейсов.
+      Модель полезна для анализа задержек рейсов, типичных временных интервалов и статистики по авиаперевозкам.
+    columns:
+      - name: flight_id
+        description: Уникальный идентификатор рейса.
+      - name: flight_no
+        description: Номер рейса.
+      - name: scheduled_departure
+        description: Запланированное время отправления рейса.
+      - name: scheduled_arrival
+        description: Запланированное время прибытия рейса.
+      - name: departure_airport
+        description: Аэропорт отправления рейса.
+      - name: arrival_airport
+        description: Аэропорт прибытия рейса.
+      - name: status
+        description: Статус рейса (например, выполнен, задержан, отменен).
+      - name: aircraft_code
+        description: Код самолета, который был назначен рейсу.
+      - name: actual_departure
+        description: Фактическое время отправления рейса.
+      - name: actual_arrival
+        description: Фактическое время прибытия рейса.
 
