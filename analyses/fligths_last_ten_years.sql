@@ -11,3 +11,10 @@ FROM
 WHERE
     scheduled_departure BETWEEN ( '{{ current_date_today }}'::DATE - INTERVAL '10 years' )
     AND '{{ current_date_today }}'::DATE
+
+
+{% set columns = adapter.get_columns_in_relation(ref('fct_flights')) %}
+{% for column in columns %}
+    {{ column.column }}: {{ column.data_type }}
+{%- endfor %}
+
