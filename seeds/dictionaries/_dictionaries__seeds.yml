@@ -11,3 +11,11 @@ seeds:
         tests:
           - not_null
           - unique
+  - name: items
+    config:
+      column_types:
+        externalId: varchar(10)
+        _airbyte_extracted_at: timestamp
+        quantity: int
+      delimiter: ","
+      

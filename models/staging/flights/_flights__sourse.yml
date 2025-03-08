@@ -216,3 +216,14 @@ sources:
             description: "Имя пассажира"
           - name: contact_data
             description: "Контактные данные пассажира"
+  - name: intermediate_seeds
+    tables:
+      - name: items
+        description: "Сведения о товарах на сайте"
+        columns:
+          - name: externalId
+            description: "артикул"
+          - name: _airbyte_extracted_at
+            description: "дата обновления"
+          - name: quantity
+            description: "количество на складе"

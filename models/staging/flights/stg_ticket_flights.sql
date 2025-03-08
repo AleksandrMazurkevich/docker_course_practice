@@ -8,7 +8,7 @@ select
     "ticket_no",
     "flight_id",
     "fare_conditions",
-    "amount"
+    {{ kopek_to_ruble('amount', 2) }} as "amount"
 from {{ source('demo_src', 'ticket_flights') }}
 
 {%- if target.name == 'dev' %}

@@ -30,4 +30,4 @@ intermediate.stg_flights__aircrafts_backup_[YYYY_MM_DD_HHSSmm]
 
 
 select *
-from  {{ source ('demo_src', 'aircrafts')}} 
+from  {{ source ('demo_src', 'aircrafts')}} mysecretpassword
