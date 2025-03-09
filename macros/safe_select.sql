@@ -1,13 +1,13 @@
-{% macro safe_select(table_name) %}
+{% macro safe_select(schema_name, table_name) %}
     {% set relation = adapter.get_relation(
         database=target.database,
-        schema=target.schema,
+        schema=schema_name,
         identifier=table_name
     ) %}
 
     {% if relation %}
-        SELECT * FROM {{ relation }}
+         {{ relation }}
     {% else %}
-        SELECT NULL
+         NULL
     {% endif %}
 {% endmacro %}
