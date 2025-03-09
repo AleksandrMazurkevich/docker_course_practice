@@ -202,7 +202,15 @@ sources:
             description: "Условия тарифа"
           - name: amount
             description: "Сумма"
-
+      - name: bookings
+        description: "Информация о бронировании"
+        columns:
+          - name: book_ref
+            description: "Номер бронироания"
+          - name: book_date
+            description: "Дата бронирования"
+          - name: total_amount
+            description: "Сумма"
       - name: tickets
         description: "Сведения о билетах"
         columns:
