@@ -6,8 +6,10 @@
     ) %}
 
     {% if relation %}
-         {{ relation }}
+        SELECT * FROM {{relation}}
     {% else %}
-         NULL
+         SELECT NULL
     {% endif %}
 {% endmacro %}
+
+{{ safe_select('intermediate', 'stg_flights__bookings') }}
