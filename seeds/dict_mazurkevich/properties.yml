@@ -1,0 +1,29 @@
+version: 2
+
+seeds:
+  - name: dict_mazurkevich__price_index_budget
+    config:
+      schema: dict_mazurkevich
+      alias: price_index_budget
+      delimiter: ";"
+      decimal: ","  # Если десятичные числа записаны через запятую
+      column_types:
+        version: varchar(20)
+        type_of_upload: varchar(20)
+        pvalue: varchar(150)
+        group_by: varchar(150)
+        filters_: varchar(150)
+        year_: varchar(4)
+        month_1: varchar(20)
+        month_2: varchar(20)
+        month_3: varchar(20)
+        month_4: varchar(20)
+        month_5: varchar(20)
+        month_6: varchar(20)
+        month_7: varchar(20)
+        month_8: varchar(20)
+        month_9: varchar(20)
+        month_10: varchar(20)
+        month_11: varchar(20)
+        month_12: varchar(20)
+        total_by_year: varchar(20)

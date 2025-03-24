@@ -1,9 +1,6 @@
-{{
-  config(
-    materialized = 'table',
-    )
-}}
-
-select
-  {{ show_columns_relation('stg_flights__bookings') }}
-from {{ ref('stg_flights__bookings') }}
+SELECT
+  bookref,
+  book_date,
+  total_amount,
+  date
+FROM {{ ref('stg_flights__bookings') }} AS stg_flights__bookings

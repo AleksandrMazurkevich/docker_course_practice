@@ -18,6 +18,7 @@ clean-targets:         # Директории для удаления через
 
 # Настройки моделей
 models:
+  +post_hook: "{{ check_dependencies() }}"
   dbt_course_practice:
     staging:
       +tags: ['staging']
@@ -34,3 +35,6 @@ models:
 seeds:
   dbt_course_practice:
     schema: seeds
+snapshots:
+  dbt_course_practice:
+    schema: snapshots

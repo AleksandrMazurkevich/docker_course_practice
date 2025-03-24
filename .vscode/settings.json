@@ -1,7 +1,7 @@
 {
     "dbt.enableNewLineagePanel": true,
-    "dbt.perspectiveTheme": "Vintage",
-    "terminal.integrated.env.osx": {
-    "DBT_DATABASE_PASSWORD": "mysecretpassword"
-  }
+    "terminal.integrated.env.osx":{
+        "DBT_DATABASE_PASSWORD": "mysecretpassword"
+    },
+    "dbt.perspectiveTheme": "Vintage"
 }
