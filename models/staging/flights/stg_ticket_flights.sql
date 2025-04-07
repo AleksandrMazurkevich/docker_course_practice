@@ -1,17 +1,25 @@
-{{ 
-    config(
-        materialized='table',
-    ) 
+{{
+  config(
+    materialized = 'table',
+    )
 }}
 
-select
-    "ticket_no",
-    "flight_id",
-    "fare_conditions",
-    {{ kopek_to_ruble('amount', 2) }} as "amount"
-from {{ source('demo_src', 'ticket_flights') }}
+with source as (
 
-{%- if target.name == 'dev' %}
-limit 10000
-{% endif %}
-  
+    select * from {{ source('demo_src', 'ticket_flights') }}
+
+),
+
+renamed as (
+
+    select
+        ticket_no,
+        flight_id,
+        fare_conditions,
+        amount
+
+    from source
+
+)
+
+select * from renamed
