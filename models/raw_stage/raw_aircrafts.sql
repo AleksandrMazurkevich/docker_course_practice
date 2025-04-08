@@ -16,8 +16,8 @@ renamed as (
         aircraft_code,
         model,
         range,
-        
-
+        'booking' as RECORD_SOURCE,
+        now() as LOAD_DATE
     from source
 
 )
