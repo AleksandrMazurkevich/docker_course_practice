@@ -1,8 +1,12 @@
 {{
   config(
     materialized = 'table',
-    )
+    indexes=[
+      {'columns': ['ticket_no'], 'type': 'btree'}
+    ]
+)
 }}
+
 
 select 
     "ticket_no",

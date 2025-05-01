@@ -1,4 +1,4 @@
-{% macro check_dependencies() %}
+{% macro check_dependencies_() %}
     {% set dependencies = model.depends_on.nodes | list %}
     {% set dependencies_count = dependencies | length %}
 

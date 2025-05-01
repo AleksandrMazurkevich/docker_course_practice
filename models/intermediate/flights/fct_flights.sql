@@ -1,14 +1,7 @@
 {{
   config(
-    materialized = 'table',
-    post_hook = "
-      {% set statuses = dbt_utils.get_column_values(
-        table=ref('stg_flights__flights'),
-        column='status'
-      ) %}
-      {% do log(' Уникальные статусы полетов ): ' ~ statuses, info=True) %}
-    "
-    )
+    materialized = 'table')
+    
 
 }}
 
